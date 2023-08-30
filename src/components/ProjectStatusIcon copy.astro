@@ -1,0 +1,19 @@
+---
+import Bud from './Bud.astro';
+import Daisy from './Daisy.astro';
+import Seed from './Seed.astro';
+
+interface Props {
+  status: "in-progress" | "complete" | "idea";
+}
+
+const Icon;
+
+switch (Astro.props.status) {
+  case 'in-progress': Icon = Daisy; break;
+  case 'complete': Icon = Seed; break;
+  case 'idea': Icon = Bud; break;
+}
+---
+
+<Icon />

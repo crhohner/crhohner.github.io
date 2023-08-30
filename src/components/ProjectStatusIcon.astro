@@ -1,0 +1,17 @@
+---
+interface Props {
+  status: "in-progress" | "finished" | "idea" | string;
+}
+---
+
+{
+  Astro.props.status === "in-progress" && (
+    <img src="/bud.svg" class="w-full h-full" />
+  )
+}
+{
+  Astro.props.status === "finished" && (
+    <img src="/daisy.svg" class="w-full h-full" />
+  )
+}
+{Astro.props.status === "idea" && <img src="/seed.svg" class="w-full h-full" />}

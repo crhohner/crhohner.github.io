@@ -1,0 +1,138 @@
+---
+interface Props {
+  imgs: {
+    src: string;
+    caption: string;
+  }[];
+}
+---
+
+<div class="carousel">
+  {
+    Astro.props.imgs.map((image) => (
+      <img src={image.src} alt={image.caption} id="carousel-image" />
+    ))
+  }
+</div>
+
+<div id="carousel-modal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img" />
+  <div id="caption"></div>
+</div>
+
+<script>
+  var modal = document.getElementById("carousel-modal");
+  const carouselImages = document.querySelectorAll("#carousel-image");
+  var modalImg = document.getElementById("img");
+  var captionText = document.getElementById("caption");
+  carouselImages.forEach((image) => {
+    image.addEventListener("click", () => {
+      console.log("hi");
+      if (modal != null) modal.style.display = "block";
+      if (modalImg != null && "src" in modalImg && "src" in image)
+        modalImg.src = image.src;
+      if (captionText != null && "alt" in image)
+        captionText.innerHTML = image.alt as string;
+    });
+  });
+  var span = document.querySelector(".modal");
+
+  // When the user clicks on <span> (x), close the modal
+  if (span != null) {
+    span.addEventListener("click", () => {
+      if (modal != null) modal.style.display = "none";
+    });
+  }
+</script>
+
+<style>
+  div.carousel {
+    white-space: nowrap;
+    padding: 20px;
+    flex: content;
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: auto;
+    gap: 12px;
+  }
+
+  div.carousel img {
+    padding: 0px;
+    object-fit: cover;
+    height: 200px;
+    width: 300px;
+    transition: transform 0.25s ease;
+    border-radius: 25px;
+    border-color: var(--copy);
+    border-width: 5px;
+    box-shadow: 0 4px 12px var(--black);
+  }
+  div.carousel img:hover {
+    -webkit-transform: scale(1.05); /* or some other value */
+    transform: scale(1.05);
+  }
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+  }
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: var(--copy);
+    padding: 10px 0;
+    height: 150px;
+  }
+  .modal-content,
+  #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  @keyframes zoom {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: var(--copy);
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .close:hover,
+  .close:focus {
+    color: var(--copy);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .modal-content {
+      width: 100%;
+    }
+  }
+</style>
