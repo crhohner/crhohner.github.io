@@ -1,0 +1,141 @@
+---
+title: "Catching Up: Game Dev"
+description: "A not-so-quick summary of my progression as game dev."
+pubDate: "Sep 1 2023"
+heroImage: "/game_dev/dialogue.png"
+status: "in-progress"
+---
+
+import Gallery from "../../components/Gallery.astro";
+
+To me, games first and foremost are a way that we interact with stories.
+I grew up playing mostly Zelda games, which are at large heavily story based.
+The worlds the characters inhabited were so vibrant due to a combination of
+the best soundtracks known to man, layers of lore and worldbuilding, and unique
+art styles that conveyed the main concepts of the games and continuously
+stretched the limitations of the technology of their eras.
+
+While I’ve come
+a long way as a developer myself, I still have a long way to go before I can live
+up to the (admittedly unreasonably high) standards set by my childhood love for all things Zelda.
+I've spent a lot of time over the years working on game projects. With each project,
+I try to push the limits of my knowledge as a developer so that eventually I can make games that mean
+something to people other than me.
+
+I've been making games for a while: first in Scratch, before I had hit double digits, then later in
+Python with PyGame, C# with Unity, and finally, Java with LibGDX. After all that time, I've accumulated quite a few projects
+worth talking about, and even more not. Instead of writing separate posts for all of my favorite projects, I'm
+dedicating this one, longer post
+to summarizing them all. Hope you enjoy following along on my development adventures!
+
+<h1>Starting Off: Angry Birds</h1>
+
+During lockdown, I decided to spend the summer after my sophomore year of high school taking
+Cornell's introductory computer science course, Introduction to Computing Using Python. In that course,
+I learned how to read documentation, which opened up a whole world of new tools at my disposal. I
+had always been interested in making games, but after finishing the class, game libraries and engines seemed much more approachable.
+
+My first games were simple projects written in Python with the PyGame library. At the time, I wasn't aware
+of which tools were most commonly used by hobby game developers, nor did I have the vocabulary to Google
+how to implement the features I had in mind. Because of my ignorance, I ended up coding custom implementations of
+features I now take for granted in higher-level engines like Unity and Godot.
+
+While this was in some ways a waste of my time, I'd like to think the time I spent reinventing the wheel taught me more
+about how the wheel works. I feel more comfortable working with Unity(2D) now because I have a better understanding of
+what a 2D engine looks like on a lower level.
+
+For my first larger project, I decided to create a game based on a physics engine. After messing around with PyBox2D,
+a Python clone of the Java library Box2D, I decided to recreate Angry Birds. This project was a massive undertaking compared
+to my previous games. On top of having to use PyBox2D, which was still pretty new to me, I needed to create menus, original art, and sound effects.
+
+<img src="/game_dev/birds.png" />
+<caption>
+  {" "}
+  An action shot from my first larger game, an Angry Birds clone.{" "}
+</caption>
+
+I eventually ran into a problem while creating the game's content: it was too hard to hard-code the location of every
+object in each level by guessing in the code and checking at runtime. After getting fed up with this unintuitive process, I
+resolved to instead build a level builder for my clone.
+
+<img src="/game_dev/lvl_build.png" />
+<caption> An example of the level builder in use. </caption>
+
+<br />
+<br />
+
+When making the clone, I left out a few key components of the original game: a points
+system, and irregular terrain. Because of this, sometimes the pigs (hedgehogs in
+my game) would hit the ground too softly to explode and roll just out of reach, making
+the level impossible. The lack of a points system eliminated any replayability the
+game may have had. Once a player finished a level, they no longer had any incentive
+to go back and try it again.
+
+Despite its flaws, I'm proud of this project. It's always fun to look back at my older work and reflect on how far I've come
+and sometimes even learn a bit from my past self.
+
+<h1>Stumbling Into A\*: Labyrinth Game</h1>
+
+<img src="/game_dev/path.png" />
+
+<caption> Gameplay from my implementation of A\*. </caption>
+
+<br />
+<br />
+
+I have many fond childhood memories of playing the Zelda game <i>Skyward Sword</i>, originally made for the Nintendo Wii.
+After playing the Nintendo Switch port in the summer of 2022, I came to love the game even more. That is every part
+of the game except for the Silent Realms: challenges in
+which the player must find all of the "sacred tears" hidden in a large area and then return to their starting location.
+
+In these challenges, the player has a limited amount of time in which they can move freely. They can extend this time
+by collecting tears, as each tear fills the time limit back up completely. You might then imagine that it's not always
+the best decision to immediatly collect tears upon finding them, as the added time does not stack. Once the timer runs out, the player is
+chased by white-and-gold creatures called Guardians, also known as the source of my nightmares.
+
+The only a player can save themselves is by extending their time. The Guardians are relentless to the point of being nearly unavoidable; a player
+can count on the fact that if they cannot pick up a tear within seconds of running out of time, they <i>will</i> be caught.
+
+There's a certain amount of strategy involved in this section of the game. Each tear can only be collected once, so it's best to plan a circular route
+ahead of time that would allow the player to space out collecting the tears as evenly as possible.
+
+For example, if all the tears were laid out in a line from the start,
+a player who collects every tear as soon as they see it would be stranded at the end of the line, with no way to gain extra time for the trip back. However, a player who
+collected every other tear at first, and then the remaining tears on the way back could sustain themselves the entire time.
+
+I have a love-hate relationship with this section of the game, but for some reason, I found it interesting enough to attempt to adapt it
+into a 2D format. However, I wasn't sure how to make my equivalent of the Guardians, gargoyles, smart enough to chase the player. I was still in high school at the time,
+so I hadn't heard of any path-finding algorithms.
+
+This was my first exposure to working with graphs (which I now love!) and the first time I had ever heard of Dijkstra's. I used a version of Djikstra's called A\*,
+which weighs paths with heuristics, and is more commonly used among game developers.
+
+This project was fascinating to me. I remember spending hours setting up graphs in my math notes during class and trying to see if I could
+write out each step of the algorithm. Beyond that, I was able to get more comfortable with animating and designing UI.
+I'm especially proud of the mini-map feature that I implemented to help players keep track of far-away enemies and objectives.
+
+<h1>Gameplay: Clone Game</h1>
+
+One of my more complete projects, the relatively untitled Clone Game is a
+platformer in which players solve puzzles by controlling up to four clones of a little monster character at once.
+However, the movement of each clone is bound by the same keys, so players must move all clones at once.
+The goal of the game is to use the environment to split up the clones to reach buttons, which open the door to the next level.
+
+In a typical level, players must first figure out how to navigate to all buttons
+and the door. I built six levels of increasing overall. My favorite of these are the two levels in which players must stack
+the clones on top of each other to reach buttons too high to reach with just one jump.
+
+<img src="/game_dev/button.png" />
+<caption> One clone holds a button down for the original. </caption>
+<br />
+<br />
+
+Some surfaces are sticky, meaning a clone standing next to the surface cannot jump.
+I implemented this feature after receiving feedback from playtesting that
+getting to the door without having another clone accidentally step off the button was too difficult.
+
+My friends and family seemed to have a good time playing this game! The puzzles were challenging yet not too frustrating,
+and stylistic details like a short intro cutscene and cute pixel art tied the whole project together. I used SLYNYRD's
+easy-to-follow <a href="https://www.slynyrd.com/blog"> pixel art tutorials </a> for this tileset.
+
+<a href="/games2/">Go read part two of this post!</a>

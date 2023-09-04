@@ -1,0 +1,23 @@
+---
+interface Props {
+  main: string;
+  caption: string;
+  imgs: string[];
+}
+---
+
+<div>
+  <div class="flex max-h-96">
+    <img class="object-cover overflow-auto" src={Astro.props.main} />
+    <div class="overflow-y-scroll">
+      {
+        Astro.props.imgs.map((image) => (
+          <>
+            <img class="object-cover" src={image} />
+          </>
+        ))
+      }
+    </div>
+  </div>
+  <caption>{Astro.props.caption}</caption>
+</div>

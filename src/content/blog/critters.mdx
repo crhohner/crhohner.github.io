@@ -1,0 +1,155 @@
+---
+title: "Critter World"
+description: "Cornell's CS2112 Final Project: CritterWorld"
+pubDate: "Aug 31 2023"
+heroImage: "/critter_world/critter.png"
+status: "finished"
+---
+
+import Gallery from "../../components/Gallery.astro";
+
+<h1>CS 2112</h1>
+Way, way back in 2022, I made the somewhat questionable decision to take CS2112:
+Honors Object-Oriented Design and Data Structures. The class is infamous among Cornell
+CS majors for its punishing workload. While that may be true, I'd be lying if I said
+I regret taking the class.
+
+<h1>Critter World</h1>
+For our final project, we were tasked with creating a simulated ecosystem in which
+"critters" could interact with each other and a simple, hexagon-based environment.
+The critters were meant to be generic stand-ins for any plant or animal species,
+but most groups chose to represent them as bugs anyway. As you may have guessed,
+we went with a butterfly theme for our frontend.
+<Gallery
+  imgs={[
+    {
+      src: "/critter_world/inspect.png",
+      caption:
+        "Two species compete for a large stock of food, represented by oranges." +
+        " With our inspect panel, we could select a critter and view it's physical" +
+        " attributes, rule set, position, and last action taken.",
+    },
+    {
+      src: "/critter_world/time.jpg",
+      caption:
+        "With the time panel, we could advance time in the world " +
+        "by a certain number of steps instantaneously, or " +
+        "watch the world play out continously at a given rate.",
+    },
+    {
+      src: "/critter_world/world.png",
+      caption:
+        "A challenge from our class tournament in which critters had to reach the food without being killed" +
+        'by a larger critter dubbed the "minotaur." With the world panel, we could load world files' +
+        " like this one or randomly generate worlds of any size.",
+    },
+    {
+      src: "/critter_world/critter_panel.png",
+      caption:
+        "An example of a smaller world. With the critters panel, we could load in any of number critters by selecting " +
+        "a critter file.",
+    },
+  ]}
+/>
+<br />
+
+Critters could move, take in information about their environments, attack,
+reproduce sexually or asexually, eat, give up food, grow, and wait (which is the equivalent
+of photosynthesis, as a critter which waits produces energy without consuming food).
+
+As a side note, critters could sense their environment in a couple of ways which were analogous to sight and smell.
+The smell sense reported the direction the critter should move in to reach food the fastest. This sense was based on
+an implementation of Djikstra's Path-Finding Algorithm.
+
+Not all critters are made the same. All critters are "born" with a set of instructions for how
+they should act in a given time step, written in a custom scripting language dubbed "critter code." In each time step,
+a critter would run through each of its rules until one of them produced an action, or it reached the last one, in which case
+it would wait for that turn.
+
+For example, you could make a "plant" critter giving it a script that tells it to do nothing but wait.
+This critter would passively create energy for itself and never move. Beyond differences in the critter code, each critter had a set of physical attributes including its
+defense, attack, health, and size.
+
+I mentioned earlier that critters could reproduce. They could do this in two ways: sexually and asexually.
+In the former case, the offspring would have a random combination of the parents' rules, creating a new script.
+For the biology nerds out there, think of each line in the code, or rule, as a heritable trait.
+
+In both cases, the offspring had the potential to be born with a mutation which would also be heritable in later generations.
+A large part of the project involved figuring out how to parse the critter code into an abstract
+syntax tree (AST) which could be manipulated to produce new "genomes" through mutation. The mutations included inserting random
+expressions into the critter code, swapping expressions, transforming one type of expression into another, removing expressions,
+and mixing up the order of rules.
+
+The presence of heritable traits that lead to differential survival among the critters matches
+nearly all of the key points of Darwin's Theory of Evolution. Perhaps the most fascinating
+aspect of our critters was their ability to evolve. We didn't frequently leave large worlds running long enough to produce many traits that
+could really be considered adaptations, but it was good fun just watching the gene pool slowly shift across generations.
+
+<h1>The Ultimate Critter</h1>
+
+During finals, our course staff hosted a fun event in which we could enter custom critters in various competitions. Unfortunately, my partners
+were swamped with preparing for their other finals at the time, but I figured I'd still give it a go.
+This was the ultimate test of my understanding of critter code. For fear of violating academic integrity,
+I'm not going to give an example of critter code here, but I will describe some of the strategies I came up with
+in my many rounds of testing my ultimate critter.
+
+Critters can sense which species another critter they encounter belongs to. I was able to exploit this by writing
+rules that instructed my critter to immediately attack critters from other species, which in this case meant from other teams.
+Energy conservation is the single most important factor in winning these matches. Many teams had their
+critters die right away as they expended too much energy growing or trying to mate. However, a critter that is too small
+will be too weak to survive for very long. I found that mid-sized critters that prioritized path-finding to food could survive the best.
+
+Our team ended up winning the Bread First Tournament, in which critters competed to collect the most food.
+We won by default, as ours was the only critter to survive for long enough to collect any significant amount of food.
+
+<h1>UI Design</h1>
+
+We also won the award for the best-looking UI design. During that finals week, I pulled an
+all-nighter iterating over the graphics used in our UI in Procreate. I learned
+a valuable lesson about the importance of contrast before settling on the butterfly theme.
+
+<Gallery
+  imgs={[
+    {
+      src: "/critter_world/initial.png",
+      caption:
+        "My initial graphics for the UI. This was what our assignment looked like when we submitted it for our final project grade.",
+    },
+    {
+      src: "/critter_world/desert.png",
+      caption:
+        "My first late-night retooling of the project's art assets. I was not too proud of this design.",
+    },
+    {
+      src: "/critter_world/staff.png",
+      caption: "A demostration of a crowd-favorite feature: Staff Mode.",
+    },
+  ]}
+/>
+<br />
+
+As a fun little added bonus, I took advantage of the code that assigned colors to different species and applied some color theory
+to make butterflies with two-toned wings. And, as a final detail, I implemented "Staff Mode," which turned each species into
+a photo of a member of our beloved course staff.
+
+<h1>Lessons Learned</h1>
+The final project wasn't just a test of our coding abilities, but our abilities to
+collaborate to produce clean, well-documented work. We learned how to write design
+documents, document our code, implement the Model-View-Controller and Factory design
+patterns, use git, and compromise and support each other as teammates.
+
+I learned a valuable lesson about paying close attention to specifications. On two occasions we misread
+or misinterpreted our assignment descriptions, leading to code that
+was either way more convoluted than it needed to be, or just plain wrong. For example,
+our AST was not entirely abstract in its first iteration.
+
+Looking back on it all, I'd say taking CS 2112 was worth it. I was able to engage with the course material on
+a deeper level than I would have been able to in the non-honors course,
+and, beyond that, I learned how to execute a project from start to finish within a group. I
+came out of the course having formed friendships with some of the
+most hilarious, talented, and passionate students at Cornell.
+
+<img src="/critter_world/team.jpg" />
+<caption> Alex, Lily, and I working on the project. </caption>
+<br />
+<br />

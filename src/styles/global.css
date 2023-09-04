@@ -105,9 +105,9 @@ b {
 }
 a {
 	color: var(--accent);
-	border-radius: 18px;
-
-	
+}
+link {
+	color: var(--copy-dark);
 }
 a:hover {
 	color: var(--accent-dark);

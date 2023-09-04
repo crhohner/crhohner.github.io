@@ -1,0 +1,131 @@
+---
+title: "Catching Up: Part Two"
+description: "A not-so-quick summary of my progression as game dev. Part two."
+pubDate: "Sep 3 2023"
+heroImage: "/art/hero.png"
+status: "in-progress"
+---
+
+import Gallery from "../../components/Gallery.astro";
+
+Welcome back to my summary of my backlog of game projects! These last two are pretty exciting. Hope you enjoy.
+
+<h1>Multi-Threaded Code: Infinite Terrain</h1>
+
+This was yet another high school project that ended up being relevant during my freshman year of college.
+I, like many other aspiring developers, am a huge fan of Sebastian Lague, a developer who documents
+his coding adventures on YouTube. He sometimes also posts tutorials, one of them being
+his <a href="https://www.youtube.com/watch?v=xlSkYjiE-Ck">tutorial for infinite terrain generation</a>
+in Unity.
+
+One cold winter, I decided to see how far into this tutorial series I could get. The first step was
+to create a program that would output maps using Perlin noise and divide the map into regions by height.
+Each region was assigned a different color, to create the effect of there being water, beaches, and snow-capped mountains.
+
+<img src="/game_dev/pig.png" />
+<caption>The player soars over an infinitely generated landscape.</caption>
+<br />
+<br />
+
+Lague guides his views through how to turn these maps into meshes, textures, and colliders, to take the project into the
+third dimension. For this terrain to be truly infinite, he walks viewers through how to implement
+a system for generating and saving chunks, activating ones in view of the camera and hiding those out of view.
+
+This required the code to work on multiple threads, which interacted with each other by creating and requesting chunks.
+Lague's tutorials provided my first exposure to concurrency, so while I was left confused after first attempting to follow
+along with this project, I'm grateful for how it prepared me for my studies in college.
+
+The “game” part of this project is based around the phrase “when pigs fly,” since I noticed that the (very round)
+pig model I had made to navigate the terrain could “fly” by accelerating up and launching
+itself off the peaks of mountains. The game's UI tracks flight time and the highest height above
+the ground reached as well as coins collected. The coins are spread randomly over the surface of the terrain
+chunks. I also implemented a wolf enemy that flings itself over the
+mountains in pursuit of the player character.
+
+When adding my own more "gamey" elements to the project, I was able to better understand Lague's tutorial
+code by having to interface directly with it. This project was really fun to work on, even if the concept of the game
+wasn't the most thrilling on its own. I still sometimes boot it up to mess around flinging myself over the procedurally-generated hills and valleys.
+
+<h1>Serialization: Below</h1>
+
+I went through a phase during my freshman year of college
+where I was obsessed with the novel Piranesi by Susanna Clarke. The book takes place
+in a partially-drowned labyrinth decorated with elaborate classical architecture
+and bizarre statues.
+
+I was inspired by the novel to start work on a new game set in
+a similarly surreal environment. But, tale as old as time, this project became more of a test
+of my abilities as a developer and less of a real, playable game.
+
+When starting to lay out the game's general architecture, I realized that if I wanted to create a game that would
+last more than one sitting, I would need to implement save data. I discovered that I could safely write to Unity's Application.persistentDataPath,
+which points to a folder hidden from users on most devices.
+
+Through extensive research online, I taught myself the basics of serializing data. One of the toughest parts of this project
+was deciding how to represent the state of objects like chests and doors in primitive types. For example, I assigned a semi-arbitrary index to every
+item in the game, so that the player's inventory could be represented as an integer array. I used 0 to represent empty slots.
+
+<img src="/game_dev/save.png" />
+<caption>
+  {" "}
+  In Below, the player could save by writing in their journal.{" "}
+</caption>
+
+For this project, I cleaned up some scripts that I find myself cleaning up and improving every year: my inventory
+and branching dialogue systems, as well as my basic player movement script for 2D platformers. I also made some neat animations for the player character,
+implemented a diary that collected narrative entries from each save point, and implemented the best double jump known to man.
+
+<h1>Game Art</h1>
+As a bonus, here's a quick summary of my progression in creating game art. Fun fact:
+I created (almost, with the exception of some <i>
+  Bubblegum Bandit
+</i> screenshots) all of the art on this website. I mostly prefer creating pixel
+art, but I try to break into 3D art from time to time. I make all of my pixel art
+in Aseprite, usually using palettes from <a href="https://lospec.com">
+  Lospec.
+</a> I create my 3D art using Blender, a free 3D modeling software often used in
+hobbyist game development.
+
+<Gallery
+  imgs={[
+    {
+      src: "/art/froggy.png",
+      caption:
+        "A cute, sunset-themed tileset from winter 2021-2022. I plan to reuse some of these assets in a larger game someday.",
+    },
+    {
+      src: "/art/tiles1.png",
+      caption:
+        "A tileset I threw together in the summer of 2023 for a friend. This was my second attempt at a tileset inspired by Piranesi by Susanna Clarke.",
+    },
+    {
+      src: "/art/tiles2.png",
+      caption:
+        "A tileset I made in the spring of 2023. I don't remember why I made this tileset, but I love the gothic themes and tiny corvids.",
+    },
+    {
+      src: "/art/tiles3.png",
+      caption:
+        "My first go at 2D lighting. This was actually a second draft at the art for Below, but was scrapped when I" +
+        " ultimately decided that the lower-resolution assets fit the playstyle better.",
+    },
+    {
+      src: "/art/sword.png",
+      caption:
+        "The Master Sword from the Legend of Zelda, made in Blender. Creating the sword was frustarting at times, " +
+        "but helped me get the hang of Blender's large toolset.",
+    },
+    {
+      src: "/art/model.png",
+      caption:
+        "A model of a human character. This was partially based off of the character models from Wind Waker.",
+    },
+    {
+      src: "/art/wolf.png",
+      caption: "The wolf from my inifinite terrain project. Cute!",
+    },
+  ]}
+/>
+<br />
+
+And, of course, go check out my post on <a href="/bandit/"> Bubblegum Bandit, </a> my first team collaboration and published game.

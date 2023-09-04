@@ -1,0 +1,139 @@
+---
+title: "Bubblegum Bandit"
+description: "My group's game for CS3152."
+pubDate: "Jul 15 2022"
+heroImage: "/bandit/bandit.png"
+status: "finished"
+---
+
+import Gallery from "../../components/Gallery.astro";
+
+<h1> The Class </h1>
+In the spring of my freshman year at Cornell, I took CS3152: Introduction to Computer
+Game Architecture. In the class, students design a 2D desktop game with LibGDX, a
+low-level (compared to game engines like Unity and Unreal) Java library for game
+design. At the end of the semester, each team presents their games to the public
+at the Game Design Initiative at Cornell Showcase.
+
+CS3152 is a five-credit class, but feels like it should be more. Between our five classes per week, hours-long meetings
+every Sunday and Thursday, and additional meetings for specific class projects, there were very few
+days that I went without seeing my team.
+
+It's almost hard to write more about Bubblegum Bandit, considering the amount of time my team
+has spent promoting and documenting it. We wrote and refined concept documents, work plans, architecture and design specifications, and more.
+While it was a bit frustrating at first to have to spend our meetings writing long, formal documents, each
+assignment helped us nail down our ideas and identify details we hadn't planned out yet.
+
+<img src="/bandit/colors.png" />
+<caption>
+  A collage from our design specification, which demonstrated the overall vibe
+  we were going for with our color scheme.
+</caption>
+
+The first month or so of the course was dedicated to catching students up to speed on our development tools and planning out our ideas.
+My team threw out several ideas along the way, including a game where the player would have to manipulate mirrors to solve light puzzles.
+Funny enough, one of the other teams' games, Flight of Vanity, successfully followed through on the very same premise. (But they did it cooler.)
+
+I had some experience with game development before taking the course, but I came to realize that I was much less familiar with the process of designing engaging gameplay.
+Our instructors pushed us to playtest our games at every stage, even before we had written a single line of code; for one of our first presentations,
+we had to construct a physical prototype of our game.
+
+While there may not seem to be much in common between an action platformer and a board game, our non-digital prototype helped us
+identify which aspects of our game confused or frustrated players and which engaged and excited them. For example, in Bubblegum Bandit, players can spit bubblegum
+onto any surface or entity. We spent hours debating how our gum should affect its targets but
+were able to decide after seeing what was most intuitive to our playtesters.
+
+<img src="/bandit/board.jpeg" />
+<caption>
+  Our non-digital prototype. Fun fact: Bubblegum Bandit was originally going to
+  be a stealth game!
+</caption>
+
+After weeks of careful planning came a non-stop grind to pump out version after version, propelled forward by a desire to do our ideas justice. On the programming side of things, I mainly implemented our animation,
+lighting, and save systems. I also made our tutorial system, which dynamically displayed graffiti on the walls of the ships to guide players through early levels based on their custom key bindings.
+Beyond that, I spent the majority of my time on our code debugging 2D graphics problems. I learned a surprising amount of math while becoming our team's expert on managing
+moving between our project's various coordinate systems.
+
+<img src="/bandit/tutorial.png" />
+<caption>
+  The bandit learns to run. Players can customize the key bindings for each of
+  the bandit's actions through our settings page.
+</caption>
+
+My most significant contribution to the game was through my art. I drew every sprite of the titular bandit in Adobe Illustrator,
+which adds up to 12 animations consisting of 47 frames. I was also responsible for designing our main ship tileset, NPCs, gum assets, and more.
+I worked closely with our other character designer to make sure our work felt cohesive and gave off the vibrant and upbeat atmosphere we had in mind for the game.
+
+I had a LOT of fun with these animations. The bandit is a silly character, so they do silly things. Some of my favorites include the cartoonish shock animation
+which shows an x-ray of a thoroughly distressed bandit, and the bandit's victory dance, inspired by the Rasputin number from Just Dance.
+
+<Gallery imgs = {[
+  {
+    src: "/bandit/shocking_encounter.png",
+    caption: "The bandit has a shocking encounter with a robot."
+  },
+  {
+    src: "/bandit/reloading.png",
+    caption: "The bandit reloads while cooling off on the ceiling of an enemy spaceship."
+  },
+   {
+    src: "/bandit/shootout.png",
+    caption: "The bandit engages in mid-air combat with a robot."
+
+}
+
+]}/>
+
+<br />
+
+Like the rest of the teams, we went overboard to promote our game in silly ways in the last weeks of the semester.
+Two of our teammates made a Bubblegum-Bandit-themed cake, which
+we ate while bedazzling cowboy hats for our final presentation. We spent days leading up to our presentation peppering our campus with
+custom stickers, and even put together a balloon arch to frame our poster.
+
+<img src="/bandit/team.jpg" />
+<caption>
+  Crested Gecko Studios at the Game Design Initiative At Cornell 2023 Showcase.
+  We dressed up for the occasion.
+</caption>
+
+I cannot emphasize enough how thankful I am for the friends I made and and skills I learned in this class. The class' culture was very much shaped
+by our collective love for all things nerdy and enthusiasm for each others' games. I formed lasting friendships with students on other teams
+just by asking questions about their work. My own team was incredibly passionate and talented. Even after spending an unreasonable amount of time with them,
+I miss getting to see and work with them every day.
+
+<h1>The Game</h1>
+According to our Steam page, Bubblegum Bandit is a "fantastic, galactic tale:"
+
+> In a galaxy overtaken by evil robots, one renegade known as the Bubblegum Bandit
+> seeks to tear apart their oppressive regime ship by ship.
+> With the power of gravity manipulation and bubblegum, the bandit flips and
+> sticks their way through enemy ships to blow them up from the inside!
+
+A typical level includes the player switching gravity to navigate a winding path through a spaceship, tricking and avoiding robots with the
+help of their ability to stick them in place with their bubblegum. The player eventually reaches the objective,
+an orb-shaped power source, and (deviously) steals it for themself, triggering an alarm sequence in which the player must escape before running out of time.
+
+Our levels are populated by three robot enemies of increasing strength and varying abilities. In later levels, we introduced heavy blocks that can crush glass tiles, enemies, and even the player. We also
+implemented locked doors that can be opened by crushing all nearby enemies with said blocks.
+
+<img src="/bandit/robots.png" />
+<caption>
+  A page from our manual introducing each of our game's three robot enemies.
+</caption>
+
+The levels that showcase the blocks are some of my favorites in the game, as they require players to
+apply the same base mechanics in increasingly creative ways to complete them. And, not to toot my own horn, but the shattering glass animation
+is just so satisfying.
+
+<h1>Reception</h1>
+Probably the best part of the course was getting to show all of our hard work at
+the GDIAC Showcase. Our game even ended up placing second out of twelve teams by
+audience vote, losing by only five votes! We spent hours playing our classmates'
+games and watching the public play Bubblegum Bandit.{" "}
+
+This past summer, one of our teammates put Bubblegum Bandit up on Steam. Thanks to her hard work, we've been able
+to bring in players from all over and continue to promote the game here at Cornell. We've even received a few international reviews!
+
+We like our game, and some other people seem to as well, so maybe you will too.
+Check out Bubblegum Bandit for free on Steam!
