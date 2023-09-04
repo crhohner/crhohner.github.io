@@ -63,6 +63,8 @@ body {
 	line-height: 1.7;
 
 	background-image: url( '/back.svg' );
+	background-size: auto;
+	background-repeat:repeat-y;
 	background-color: var(--dark-green); /*temp*/
 }
 main {
