@@ -55,7 +55,6 @@ body {
 	font-family: 'Baskerville';
 	padding: 0;
 	text-align: left;
-	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: var(--copy);
