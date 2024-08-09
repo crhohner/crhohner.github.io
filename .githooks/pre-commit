@@ -1,1 +1,3 @@
+echo "pre-commit hook is running"
 npm run test || exit 0
+echo "pre-commit hook exited successfully :3"
