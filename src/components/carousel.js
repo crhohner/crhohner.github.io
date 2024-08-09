@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
-import Rotatable from "./rotatable";
-import Preview from "./preview";
+import Image from "next/image";
+/*import Rotatable from "./rotatable";
+import Preview from "./preview";*/
 
 export default function Carousel({ projects }) {
   const [index, setIndex] = useState(Math.floor(projects.length / 2));
@@ -20,7 +21,13 @@ export default function Carousel({ projects }) {
 
   //const models = projects.map((project) => <Rotatable path={project.path} />);
   const models = projects.map((project) => (
-    <img src={project.path} height={"300rem"} />
+    <Image
+      src={project.path}
+      key={project.name}
+      height={300}
+      width={300}
+      alt={project.name}
+    />
   ));
 
   return (
