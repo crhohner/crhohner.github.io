@@ -1,14 +1,18 @@
 import Carousel from "../../components/carousel";
 
 export default function Page() {
-  const loremIpsum =
-    " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod" +
-    "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim" +
-    "veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea" +
-    "commodo consequat. Duis aute irure dolor in reprehenderit in voluptate" +
-    "velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint" +
-    "occaecat cupidatat non proident, sunt in culpa qui officia deserunt" +
-    " mollit anim id est laborum.";
+  const intro =
+    "My name is Caroline Hohner. I'm a junior studying computer science with a minor" +
+    "in game design at Cornell University in the College of Arts and Sciences. I interned at W. W. Grainger this past summer, where I" +
+    " worked on a fullstack team developing an internal tool. At school, I lead a weekly support course for my " +
+    "department's functional programming course. In my free time, I'm a developer for Cornell University Unmanned Air Systems (CUAir) " +
+    "and a member of and public relations co-chair for the Cornell University Figure Skating Club's competition team. " +
+    "I would describe myself as a jack-of-all-trades: I'm interested in pretty much everything, whether that's fullstack develpoment, embeded systems, or game design.";
+
+  const skills =
+    "Languages: Java, Python, C#, JavaScript, TypeScript, HTML/CSS, Rust, OCaml, Kotlin, PostgreSQL | " +
+    "Frameworks: React, Next.js | " +
+    "Developer Tools: Git, Kubernetes, Docker, VS Code, IntelliJ, Unity, Adobe Creative Suite, Agile Development";
 
   const projects = [
     {
@@ -16,8 +20,7 @@ export default function Page() {
       description:
         "Semester-long project for Cornell's 3152: Intro to Game Development. Bubblegum Bandit was developed by a team of eight including programmers, " +
         "artists, and UI/UX designers. The game was written using LibGDX, a Java game development framework. " +
-        "Bubblegum Bandit is available to play on Steam " +
-        "and was presented at the 2024 PAX East convention.",
+        "Bubblegum Bandit is available to play on Steam and was presented at the 2024 PAX East convention.",
 
       path: "/bandit.png",
     },
@@ -62,15 +65,10 @@ export default function Page() {
       <Carousel projects={projects} />
 
       <h>Welcome!</h>
-      <p>{loremIpsum}</p>
+      <p>{intro}</p>
       <div className="container">
         <h>Skills</h>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
+        <p>{skills}</p>
       </div>
     </>
   );
