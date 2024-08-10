@@ -7,7 +7,7 @@ export default function Home() {
     " worked on a full-stack team developing an internal tool. At school, I lead a weekly support course for my " +
     "department's functional programming course. In my free time, I'm a developer for Cornell University Unmanned Air Systems (CUAir) " +
     "and a member of and public relations co-chair for the Cornell University Figure Skating Club's competition team. " +
-    "I would describe myself as a jack-of-all-trades: I'm interested in pretty much everything, whether that's full-stack develpoment, embeded systems, or game design.";
+    "I would describe myself as a jack-of-all-trades: I'm interested in pretty much everything, whether that's full-stack develpoment, embedded systems, or game design.";
 
   const projects = [
     {
