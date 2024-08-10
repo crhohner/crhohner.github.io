@@ -1,6 +1,6 @@
-import Carousel from "../../components/carousel";
+import Carousel from "../components/carousel";
 
-export default function Page() {
+export default function Home() {
   const intro =
     "My name is Caroline Hohner. I'm a junior studying computer science with a minor" +
     "in game design at Cornell University in the College of Arts and Sciences. I interned at W. W. Grainger this past summer, where I" +
@@ -8,11 +8,6 @@ export default function Page() {
     "department's functional programming course. In my free time, I'm a developer for Cornell University Unmanned Air Systems (CUAir) " +
     "and a member of and public relations co-chair for the Cornell University Figure Skating Club's competition team. " +
     "I would describe myself as a jack-of-all-trades: I'm interested in pretty much everything, whether that's fullstack develpoment, embeded systems, or game design.";
-
-  const skills =
-    "Languages: Java, Python, C#, JavaScript, TypeScript, HTML/CSS, Rust, OCaml, Kotlin, PostgreSQL | " +
-    "Frameworks: React, Next.js | " +
-    "Developer Tools: Git, Kubernetes, Docker, VS Code, IntelliJ, Unity, Adobe Creative Suite, Agile Development";
 
   const projects = [
     {
@@ -66,9 +61,26 @@ export default function Page() {
 
       <h>Welcome!</h>
       <p>{intro}</p>
+      <br />
+      <br />
+      <h>Skills</h>
       <div className="container">
-        <h>Skills</h>
-        <p>{skills}</p>
+        <h>Languages</h>
+        <p>
+          Java, Python, C#, JavaScript, TypeScript, HTML/CSS, Rust, OCaml,
+          Kotlin, PostgreSQL
+        </p>
+      </div>
+      <div className="container">
+        <h>Frameworks</h>
+        <p>React, Next.js</p>
+      </div>
+      <div className="container">
+        <h>Developer Tools</h>
+        <p>
+          Git, Kubernetes, Docker, VS Code, IntelliJ, Unity, Adobe Creative
+          Suite, Agile Development
+        </p>
       </div>
     </>
   );
