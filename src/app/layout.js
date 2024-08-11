@@ -11,6 +11,7 @@ export default function RootLayout({ children }) {
         <meta name="description" content="Caroline Hohner's portfolio" />
         <meta name="og:title" content="Caroline Hohner" />
         <meta name="og:image" content={``} />
+        <link rel="shortcut icon" href="/icon.ico" />
       </Head>
       <body>
         <Header />
