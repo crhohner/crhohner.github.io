@@ -55,8 +55,13 @@ export default function Carousel({ projects }) {
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
-    if (isLeftSwipe || isRightSwipe) moveIndex(isRightSwipe);
+    if (isLeftSwipe || isRightSwipe) moveIndex(isLeftSwipe);
   };
+
+  function dots() {
+    const range = [...Array(projects.length).keys()];
+    return <>{range.map((i) => (index === i ? "O" : "o"))}</>;
+  }
 
   return (
     <div style={{ paddingBottom: "4rem" }}>
@@ -88,11 +93,12 @@ export default function Carousel({ projects }) {
           )}
         </div>
       </div>
+      <br />
+      <div className="center"> {dots()}</div>
       <div className="center">
         <div className="details">
           <h>{projects[index].name}</h>
           <p>{projects[index].description}</p>
-          <p>{index + 1 + "/" + projects.length}</p>
         </div>
       </div>
     </div>

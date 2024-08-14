@@ -1,13 +1,17 @@
 import Carousel from "../components/carousel";
 
 export default function Home() {
-  const intro =
+  const intro1 =
     "My name is Caroline Hohner. I'm a junior studying computer science with a minor " +
-    "in game design at Cornell University in the College of Arts and Sciences. I interned at W. W. Grainger this past summer, where I" +
+    "in game design at Cornell University in the College of Arts and Sciences. ";
+  const intro2 =
+    "I interned at W. W. Grainger this past summer, where I" +
     " worked on a full-stack team developing an internal tool. At school, I lead a weekly support course for my " +
-    "department's functional programming course. In my free time, I'm a developer for Cornell University Unmanned Air Systems (CUAir) " +
-    "and a member of and public relations co-chair for the Cornell University Figure Skating Club's competition team. " +
-    "I would describe myself as a jack-of-all-trades: I'm interested in pretty much everything, whether that's full-stack development, embedded systems, or game design.";
+    "department's functional programming course.";
+
+  const intro3 =
+    "In my free time, I'm a developer for Cornell University Unmanned Air Systems (CUAir) " +
+    "and a member of and public relations co-chair for the Cornell University Figure Skating Club's competition team.";
 
   const projects = [
     {
@@ -56,11 +60,14 @@ export default function Home() {
   return (
     <>
       <title>Home</title>
-
+      <h>Projects</h>
+      <br />
       <Carousel projects={projects} />
 
       <h>Welcome!</h>
-      <p>{intro}</p>
+      <p>{intro1}</p>
+      <p>{intro2}</p>
+      <p>{intro3}</p>
       <br />
       <br />
       <h>Skills</h>
