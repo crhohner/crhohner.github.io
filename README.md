@@ -1,7 +1,7 @@
 ## README
 
 This is a second draft of my portfolio, updated for the 2024-2025 academic year.
-This project uses styling inspired by [this project.](https://astro.build/themes/details/astroblog/) This iteration of my portfolio was created with Next.js and written mainly in JavaScript. All 3D models were made by myself in Blender and embedded using Three.js Fibre.
+This project uses styling inspired by [this project.](https://astro.build/themes/details/astroblog/) This iteration of my portfolio was created with Next.js and written mainly in JavaScript. 
 Feel free to take inspiration and/or code from this project.
 
 — Caroline Hohner
