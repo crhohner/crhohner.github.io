@@ -26,7 +26,7 @@ export default function Header() {
             alt="LinkedIn logo"
           />
         </Link>
-        <Link href="https://drive.google.com/file/d/1agNvRl4oZd9B5EUGj52l7VIyQVqMFjkm/view?usp=sharing">
+        <Link href="https://drive.google.com/file/d/1punvWAeOi1rfdP4dMoZ6ifjRCx8gxBvE/view?usp=sharing">
           <Image src="./resume.svg" height={32} width={32} alt="resume icon" />
         </Link>
       </div>
