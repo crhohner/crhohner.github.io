@@ -51,11 +51,21 @@ export default function Home() {
         "Honors Object-Oriented Design and Data Structures.",
       path: "/critters.png",
     },
-    /*{
-      name: "Phoenix Down: Full Stack Web App",
-      description: "",
-      path: ""
-    },*/
+    {
+      name: "Savpoint: Final Fantasy VII Build Manager",
+      description:
+        "Allows FFVII fans to save, manage," +
+        " and share their party setups for the original game and the Remake triology! " +
+        "Built with Supabase and Next.js. This is a work in progress, so I don't have a domain yet.",
+      path: "/savepoint.png",
+    },
+    {
+      name: "Winging It: Magpie Flight Simulator",
+      description:
+        "Simulates RC flight, flavored as a magpie soaring around the Colorado mountains. Built in Unity. All models/animations" +
+        " made by myself in Blender. Winging It was made for Cornell's Development in Games Association's Winter 2024 Jam.",
+      path: "/magpie.png",
+    },
   ];
   return (
     <>
