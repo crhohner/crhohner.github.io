@@ -63,7 +63,7 @@ export default function Home() {
       name: "Winging It: Magpie Flight Simulator",
       description:
         "Simulates RC flight, flavored as a magpie soaring around the Colorado mountains. Built in Unity. All models/animations" +
-        " made by myself in Blender. Winging It was made for Cornell's Development in Games Association's Winter 2024 Jam.",
+        " made by myself in Blender. Winging It was made for Cornell's Development in Games Association's Winter 2024 Jam. Find it on my itch.io: https://chohner.itch.io/winging-it",
       path: "/magpie.png",
     },
   ];
