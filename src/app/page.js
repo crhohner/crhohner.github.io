@@ -55,8 +55,8 @@ export default function Home() {
       name: "Savpoint: Final Fantasy VII Build Manager",
       description:
         "Allows FFVII fans to save, manage," +
-        " and share their party setups for the original game and the Remake triology! " +
-        "Built with Supabase and Next.js. This is a work in progress, so I don't have a domain yet.",
+        " and share their party setups for the original game and the Remake trilogy! " +
+        "Find it here: https://www.ffvii-savepoint.com/",
       path: "/savepoint.png",
     },
     {
