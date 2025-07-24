@@ -11,27 +11,9 @@ body {
   min-height: 100vh;
 }
 
-footer {
-  background: linear-gradient(
-      to bottom,
-      #62a1f2 2%,
-      10%,
-      #245ddb 80%,
-      95%,
-      #093ba6 100%
-    ),
-    white;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+.lineup {
   display: flex;
-  flex-direction: row;
-  justify-content: right;
-  height: 30px;
-}
-
-.desktop {
-  height: 100%;
-  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }

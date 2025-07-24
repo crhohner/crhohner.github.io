@@ -5,7 +5,7 @@ import triggerHappy from "./assets/projects/trigger-happy.md?raw";
 // import Footer from "./components/Footer";
 import Tabs from "./components/Tabs";
 import StatusBar from "./components/windows/StatusBar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Draggable from "./components/Draggable";
 
 const tabsContent = [
@@ -35,26 +35,44 @@ const windows = [
 function App() {
   const [zOrdering, setZOrdering] = useState(windows.map((_, i) => i));
 
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = width <= 768;
+
   return (
     <body>
-      {windows.map((window, i) => (
-        <Draggable
-          key={i}
-          onClick={() =>
-            setZOrdering((ordering) => {
-              const new_ordering = ordering.filter((k) => k != i);
-              new_ordering.push(i);
-              console.log("click!");
-              return new_ordering;
-            })
-          }
-          styles={{ zIndex: zOrdering.indexOf(i) }}
-          initial_x={50 + 60 * i}
-          initial_y={50 * i}
-        >
-          {window}
-        </Draggable>
-      ))}
+      {isMobile ? (
+        <div className="lineup">{windows}</div>
+      ) : (
+        windows.map((window, i) => (
+          <Draggable
+            key={i}
+            onClick={() =>
+              setZOrdering((ordering) => {
+                const new_ordering = ordering.filter((k) => k != i);
+                new_ordering.push(i);
+                console.log("click!");
+                return new_ordering;
+              })
+            }
+            styles={{ zIndex: zOrdering.indexOf(i) }}
+            initial_x={50 + 60 * i}
+            initial_y={50 * i}
+          >
+            {window}
+          </Draggable>
+        ))
+      )}
     </body>
   );
 }
