@@ -1,3 +1,5 @@
-**henlo**
+**Nice To Meet You!**
 
-Donec faucibus ultrices vestibulum. Morbi nisl est, ornare lacinia convallis eu, porta et felis. Etiam in sagittis felis. Etiam id mi vel metus egestas fringilla. Nam scelerisque orci lorem, sed aliquet tortor laoreet mattis. Morbi consectetur fringilla lacus, ut blandit purus. Sed sed mi nec est vehicula pharetra. Etiam sollicitudin eu nisi et vestibulum. Cras viverra et orci rutrum porta. Pellentesque at est aliquet, tristique diam eu, semper dolor. Nullam orci elit, laoreet mattis blandit quis, auctor sagittis nunc. Mauris scelerisque consequat placerat. Vestibulum erat tortor, auctor nec viverra at, hendrerit ac erat.
+As you've probably heard, my name is Caroline Hohner. I'm currently interning at Jump Trading and I plan to graduate from Cornell with a major in Computer Science and minor in Game Design next spring.
+
+![A Nice Young Lady](/nice-pic.jpg)

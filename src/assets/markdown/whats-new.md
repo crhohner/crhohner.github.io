@@ -1,3 +1,10 @@
-**henlo**
+**Working At Jump**
 
-Donec faucibus ultrices vestibulum. Morbi nisl est, ornare lacinia convallis eu, porta et felis. Etiam in sagittis felis. Etiam id mi vel metus egestas fringilla. Nam scelerisque orci lorem, sed aliquet tortor laoreet mattis. Morbi consectetur fringilla lacus, ut blandit purus. Sed sed mi nec est vehicula pharetra. Etiam sollicitudin eu nisi et vestibulum. Cras viverra et orci rutrum porta. Pellentesque at est aliquet, tristique diam eu, semper dolor. Nullam orci elit, laoreet mattis blandit quis, auctor sagittis nunc. Mauris scelerisque consequat placerat. Vestibulum erat tortor, auctor nec viverra at, hendrerit ac erat.
+Not too much I can say here, but I've been working my Python muscles hard. The main thing on my mind
+every day: is this Pythonic enough?
+
+**GMTK Game Jam 2025**
+
+The first step for our budding (and unnamed) game studio! We start planning soon.
+
+![What's up with those CUAir guys?](/pic-of-the-month.png)
