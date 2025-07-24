@@ -49,8 +49,8 @@ function App() {
             })
           }
           styles={{ zIndex: zOrdering.indexOf(i) }}
-          initial_x={20 * i}
-          initial_y={60 * i}
+          initial_x={50 + 60 * i}
+          initial_y={50 * i}
         >
           {window}
         </Draggable>
