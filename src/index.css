@@ -1,5 +1,6 @@
 :root {
   --background-image: url("./assets/bliss.png");
+  cursor: url(./assets/default_arrow.cur), auto;
 }
 
 body {
@@ -8,13 +9,6 @@ body {
   background-position: center;
   margin: 5rem;
   min-height: 100vh;
-}
-
-main {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
 }
 
 footer {
@@ -35,4 +29,9 @@ footer {
   flex-direction: row;
   justify-content: right;
   height: 30px;
+}
+
+.desktop {
+  height: 100%;
+  width: 100%;
 }

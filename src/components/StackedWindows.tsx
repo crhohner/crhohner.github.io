@@ -9,10 +9,10 @@ const StackedWindows: React.FC<StackedWindowsProps> = ({ children }) => {
   const [zOrdering, setZOrdering] = useState(children.map((_, i) => i));
 
   return (
-    <ul style={{ position: "relative" }}>
+    <div style={{ position: "relative" }}>
       {children.map((child, i) => {
         return (
-          <li
+          <div
             key={i}
             style={{
               position: "absolute",
@@ -29,10 +29,10 @@ const StackedWindows: React.FC<StackedWindowsProps> = ({ children }) => {
             }
           >
             {child}
-          </li>
+          </div>
         );
       })}
-    </ul>
+    </div>
   );
 };
 

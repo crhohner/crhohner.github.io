@@ -13,6 +13,7 @@ const Tabs: React.FC<TabsProps> = ({ content }) => {
       <menu role="tablist">
         {content.map(({ name }, i) => (
           <button
+            key={name}
             aria-selected={i === selected}
             aria-controls={name}
             onClick={() => setSelected(i)}
@@ -22,7 +23,7 @@ const Tabs: React.FC<TabsProps> = ({ content }) => {
         ))}
       </menu>
       {content.map(({ node, name }, i) => (
-        <article role="tabpanel" hidden={i !== selected} id={name}>
+        <article role="tabpanel" hidden={i !== selected} id={name} key={name}>
           {node}
         </article>
       ))}

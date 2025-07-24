@@ -8,7 +8,7 @@ interface StatusBarProps {
 
 const StatusBar: React.FC<StatusBarProps> = ({ title, children }) => {
   return (
-    <div className="window" style={{ width: "320px" }}>
+    <div className="window">
       <div className="title-bar">
         <div className="title-bar-text">{title}</div>
       </div>
