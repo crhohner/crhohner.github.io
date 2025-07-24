@@ -8,7 +8,7 @@ interface WindowProps {
 
 const Window: React.FC<WindowProps> = ({ title, children }) => {
   return (
-    <div className="window" style={{ height: 400, width: 400 }}>
+    <div className="window" style={{ width: 400 }}>
       <div className="title-bar">
         <div className="title-bar-text">{title}</div>
         <div className="title-bar-controls">
@@ -17,7 +17,9 @@ const Window: React.FC<WindowProps> = ({ title, children }) => {
           <button aria-label="Close"></button>
         </div>
       </div>
-      <div className="window-body">{children}</div>
+      <div className="window-body" style={{ padding: "0.5rem" }}>
+        {children}
+      </div>
     </div>
   );
 };

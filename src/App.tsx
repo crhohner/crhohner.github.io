@@ -1,8 +1,9 @@
 import Window from "./components/windows/Window";
 import ReactMarkdown from "react-markdown";
-import savepoint from "./assets/projects/savepoint.md?raw";
-import triggerHappy from "./assets/projects/trigger-happy.md?raw";
-// import Footer from "./components/Footer";
+import savepoint from "./assets/markdown/savepoint.md?raw";
+import triggerHappy from "./assets/markdown/trigger-happy.md?raw";
+import aboutMe from "./assets/markdown/about-me.md?raw";
+import whatsNew from "./assets/markdown/whats-new.md?raw";
 import Tabs from "./components/Tabs";
 import StatusBar from "./components/windows/StatusBar";
 import { useState, useEffect } from "react";
@@ -17,23 +18,33 @@ const tabsContent = [
 ];
 
 const windows = [
-  <StatusBar title="Caroline Hohner">
-    SWE Intern @ Jump Trading | CS @ Cornell
+  <StatusBar title="Welcome!">
+    <h4>Caroline Hohner</h4>
+    <h5>SWE Intern @ Jump Trading | CS @ Cornell</h5>
   </StatusBar>,
 
-  <Window title={"Test Window"}>
-    <ReactMarkdown>{savepoint}</ReactMarkdown>
+  <Window title={"About Me"}>
+    <ReactMarkdown>{aboutMe}</ReactMarkdown>
   </Window>,
-  <Window title={"Test Window"}>
-    <ReactMarkdown>{triggerHappy}</ReactMarkdown>
+  <Window title={"What's New?"}>
+    <ReactMarkdown>{whatsNew}</ReactMarkdown>
   </Window>,
   <Window title={"Projects"}>
     <Tabs content={tabsContent} />
   </Window>,
 ];
 
+const positions = [
+  { x: 240, y: 100 },
+  { x: 180, y: 100 },
+  { x: 140, y: 100 },
+  { x: 100, y: 100 },
+];
+
 function App() {
-  const [zOrdering, setZOrdering] = useState(windows.map((_, i) => i));
+  const [zOrdering, setZOrdering] = useState(
+    windows.map((_, i) => i).reverse()
+  );
 
   const [width, setWidth] = useState<number>(window.innerWidth);
 
@@ -61,13 +72,12 @@ function App() {
               setZOrdering((ordering) => {
                 const new_ordering = ordering.filter((k) => k != i);
                 new_ordering.push(i);
-                console.log("click!");
                 return new_ordering;
               })
             }
             styles={{ zIndex: zOrdering.indexOf(i) }}
-            initial_x={50 + 60 * i}
-            initial_y={50 * i}
+            initial_x={positions[i].x}
+            initial_y={positions[i].y}
           >
             {window}
           </Draggable>

@@ -17,3 +17,17 @@ body {
   align-items: center;
   gap: 1rem;
 }
+
+@font-face {
+  font-family: "WindowsXP"; /* Give your font a descriptive name */
+  src: url("assets/windows-xp-tahoma.otf.woff2") format("woff2"); /* Specify the path to your WOFF2 file and its format */
+}
+
+h3,
+h4,
+h5,
+h6 {
+  /* font-family: "WindowsXP"; */
+  margin-top: 0;
+  margin-bottom: 0;
+}
