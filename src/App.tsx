@@ -62,6 +62,11 @@ const windows = [
         <li key="cuair">
           <a href="https://cuair.org/imaging-systems.html">CUAir</a>
         </li>
+        <li key="resume">
+          <a href="https://drive.google.com/file/d/1W3-c075fZuCqMQm-WMKDA8GaB7MlGKZ7/view?usp=sharing">
+            Resume
+          </a>
+        </li>
       </ul>
     </div>
   </Window>,
