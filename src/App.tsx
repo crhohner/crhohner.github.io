@@ -8,10 +8,15 @@ import whatsNew from "./assets/markdown/whats-new.md?raw";
 import tamagotchi from "./assets/markdown/tamagotchi.md?raw";
 import Tabs from "./components/Tabs";
 import StatusBar from "./components/windows/StatusBar";
+import planeSystem from "./assets/markdown/plane-system.md?raw";
 import { useState, useEffect } from "react";
 import Draggable from "./components/Draggable";
 
 const tabsContent = [
+  {
+    name: "Plane System",
+    node: <ReactMarkdown>{planeSystem}</ReactMarkdown>,
+  },
   { name: "Savepoint", node: <ReactMarkdown>{savepoint}</ReactMarkdown> },
   {
     name: "Trigger Happy",

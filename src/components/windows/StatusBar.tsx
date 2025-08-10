@@ -16,8 +16,7 @@ const StatusBar: React.FC<StatusBarProps> = ({ title, children }) => {
         {children}
       </div>
       <div className="status-bar">
-        <p className="status-bar-field">Fullstack Dev</p>
-        <p className="status-bar-field">Game Dev</p>
+        <p className="status-bar-field">Spring 2026 Grad</p>
       </div>
     </div>
   );

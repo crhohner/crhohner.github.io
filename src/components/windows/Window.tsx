@@ -3,7 +3,7 @@ import React, { type ReactNode } from "react";
 
 interface WindowProps {
   title: string;
-  children?: ReactNode; // Explicitly define children as optional ReactNode
+  children?: ReactNode;
 }
 
 const Window: React.FC<WindowProps> = ({ title, children }) => {

@@ -20,6 +20,6 @@ Cross-platform multiplayer lets you throw down with friends no matter where they
 
 ======
 
-Trigger Happy was my team's game for CS4152: Advanced Topics in Computer Game Architecture. We won Audience Vote at the 2025 Game Design Initiative at Cornell Showcase.
+Trigger Happy was my team's game for CS4152: Advanced Topics in Computer Game Architecture, built with the C++ Cornell University Games Library (CUGL). We won Audience Vote at the 2025 [Game Design Initiative at Cornell Showcase](https://gdiac.cs.cornell.edu/gdiac/showcase/). I was primarily responsible for designing and implementing our ad-hoc server networking architecture.
 
 ![Some promotional art by the talented Linda Hu](/banner.png)
