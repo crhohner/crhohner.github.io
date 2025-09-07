@@ -1,10 +1,16 @@
-**Working At Jump**
+**Back to School**
 
-Not too much I can say here, but I've been working my Python muscles hard. The main thing on my mind
-every day: is this Pythonic enough?
+I just started my first semester as a TA for CS3410: Computer System Organization and Programming.
+We're revving up the semester with some float math and pointer logic.
 
-**GMTK Game Jam 2025**
+**New Personal Project Ideation**
 
-The first step for our budding (and unnamed) game studio! Play the game [here](https://nishicarps.itch.io/loop-de-coop).
+Beyond that, I've been dreaming up a new iteration of my [Ink](https://www.inklestudios.com/ink/) wrapper template project for Unity
+that's a little more flexible and artist-friendly. On the web side of things, I've been rolling
+around an idea for a web app that lets artists share dailies with each other. Sort of like a private Inktober
+support group.
 
-![What's up with those CUAir guys?](/pic-of-the-month.png)
+**Pic of the Month**
+
+My haul from the Ithaca Farmers Market!
+![Farmer's market haul](/pic-of-the-month.jpeg)

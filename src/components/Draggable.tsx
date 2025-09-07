@@ -3,26 +3,25 @@ import { useDraggable } from "@reactuses/core";
 
 interface DraggableProps {
   children: ReactNode;
-  initial_x: number;
-  initial_y: number;
   styles: any;
   onClick: any;
 }
 
 export default function Draggable({
   children,
-  initial_x,
-  initial_y,
   styles,
   onClick,
 }: DraggableProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [initialPosition, setInitialPosition] = useState({
-    x: initial_x,
-    y: initial_y,
+    x: window.innerWidth * 0.3,
+    y: window.innerHeight * 0.1,
   });
   useEffect(() => {
-    setInitialPosition({ x: initial_x, y: initial_x });
+    setInitialPosition({
+      x: window.innerWidth * 0.3,
+      y: window.innerHeight * 0.1,
+    });
   }, []);
 
   const [x, y] = useDraggable(ref, {
